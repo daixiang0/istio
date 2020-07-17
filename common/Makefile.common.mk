@@ -67,7 +67,10 @@ lint-protos:
 lint-licenses: mod-download-go
 	@license-lint --config common/config/license-lint.yml
 
-lint-all: lint-dockerfiles lint-scripts lint-yaml lint-helm lint-copyright-banner lint-go lint-python lint-markdown lint-sass lint-typescript lint-protos lint-licenses
+lint-whitenoise:
+	@./common/scripts/lint_whitenoise.sh
+
+lint-all: lint-dockerfiles lint-scripts lint-yaml lint-helm lint-copyright-banner lint-go lint-python lint-markdown lint-sass lint-typescript lint-protos lint-licenses lint-whitenoise
 
 tidy-go:
 	@go mod tidy
